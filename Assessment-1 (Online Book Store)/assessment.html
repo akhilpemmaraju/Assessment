@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assessment.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Bookworm.com<h1>
+                <p class="lead">Your one stop destination to satisfy the bookworm inside you!</p>
+                <hr class="my-4">
+        <p><h5>Name</h5><input required type="text"/>
+        <br>
+        <h5>Email</h5><input required type="email"/>
+        <br>
+        <button type="button">Sign Up</button>
+        </p>
+    </div>
+    <button type="button" id="showcart" data-toggle="modal" data-target="#order" onclick="showCart()">Cart</button>
+    <button type="button" id="clear" onclick="clear()">Clear Cart</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/1984.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" val="1984" class="card-title">1984</h5>
+                        <h5 id="author" class="card-title">Author:George Orwell</h5>
+                        <h5 id="price" class="card-title">Price:Rs.180</h5>
+                        <p class="card-text">Among the seminal texts of the 20th century, Nineteen Eighty-Four is a rare
+                            work that grows more haunting as its futuristic purgatory becomes more real. </p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/alchemist.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Alchemist</h5>
+                        <h5 id="author" class="card-title">Author:Paulo Coelho</h5>
+                        <h5 id="price" class="card-title">Price:Rs.150</h5>
+                        <p class="card-text">Paulo Coelho's enchanting novel has inspired a devoted following around the
+                            world. This story, dazzling in its powerful simplicity and soul-stirring wisdom, is about an
+                            Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the
+                            Egyptian desert in search of a treasure buried near the Pyramids.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/chess.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">Chess Story</h5>
+                        <h5 id="author" class="card-title">Author:Stefan Zweig</h5>
+                        <h5 id="price" class="card-title">Price:Rs.300</h5>
+                        <p class="card-text">Chess Story, also known as The Royal Game, is the Austrian master Stefan
+                            Zweig's final achievement, completed in Brazilian exile and sent off to his American
+                            publisher only a matter of days before his suicide in 1942.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/gatsby.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Great Gatsby</h5>
+                        <h5 id="author" class="card-title">Author:F.Scott Fitzgerald</h5>
+                        <h5 id="price" class="card-title">Price:Rs.200</h5>
+                        <p class="card-text">The Great Gatsby, F. Scott Fitzgerald's third book, stands as the supreme
+                            achievement of his career. This exemplary novel of the Jazz Age has been acclaimed by
+                            generations of readers.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/hobbit.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Hobbit:There and Back Again</h5>
+                        <h5 id="author" class="card-title">Author:J.R.R Tolkien</h5>
+                        <h5 id="price" class="card-title">Price:Rs.300</h5>
+                        <p class="card-text">Written for J.R.R. Tolkien’s own children, The Hobbit met with instant
+                            critical acclaim when it was first published in 1937.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/meta.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Metamorphosis</h5>
+                        <h5 id="author" class="card-title">Author:Franz Kafka</h5>
+                        <h5 id="price" class="card-title">Price:Rs.350</h5>
+                        <p class="card-text">With it's startling, bizarre, yet surprisingly funny first opening, Kafka
+                            begins his masterpiece, The Metamorphosis.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/oldman.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Old Man and the Sea</h5>
+                        <h5 id="author" class="card-title">Author:Ernest Hemmingway</h5>
+                        <h5 id="price" class="card-title">Price:Rs.200</h5>
+                        <p class="card-text">The last novel Ernest Hemingway saw published, The Old Man and the Sea has
+                            proved itself to be one of the enduring works of American fiction.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/orient.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">Murder on the Orient Express</h5>
+                        <h5 id="author" class="card-title">Author:Agatha Christie</h5>
+                        <h5 id="price" class="card-title">Price:Rs.250</h5>
+                        <p class="card-text">Le train est aussi dangereux que le paquebot » affirme Hercule Poirot…
+                            Le lendemain, dans une voiture de l’Orient-Express bloqué par les neiges yougoslaves, on
+                            découvre le cadavre d’un américain lardé de douze coups de couteau.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/price.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Little Prince</h5>
+                        <h5 id="author" class="card-title">Author:Antoine de Saint-Exupéry,</h5>
+                        <h5 id="price" class="card-title">Price:Rs.220</h5>
+                        <p class="card-text">Moral allegory and spiritual autobiography, The Little Prince is the most
+                            translated book in the French language.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/sherlock.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">A Study In Scarlet</h5>
+                        <h5 id="author" class="card-title">Author:Sir Arthur Conan Doyle</h5>
+                        <h5 id="price" class="card-title">Price:Rs.350</h5>
+                        <p class="card-text">From the moment Dr John Watson takes lodgings in Baker Street with the
+                            consulting detective Sherlock Holmes, he becomes intimately acquainted with the bloody
+                            violence and frightening ingenuity of the criminal mind.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/time.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">The Time Machine</h5>
+                        <h5 id="author" class="card-title">Author:H.G.Wells</h5>
+                        <h5 id="price" class="card-title">Price:Rs.450</h5>
+                        <p class="card-text">So begins the Time Traveller’s astonishing firsthand account of his journey
+                            800,000 years beyond his own era—and the story that launched H.G. Wells’s successful career
+                            and earned him his reputation as the father of science fiction.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card" style="width: 18rem; height: 40rem;">
+                    <img src="images/blade.jpg" width="200px" height="200px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 id="title" class="card-title">Do Androids Dream of Electric Sheep?</h5>
+                        <h5 id="author" class="card-title">Author:Philip.K.Dick</h5>
+                        <h5 id="price" class="card-title">Price:Rs.450</h5>
+                        <p class="card-text">It was January 2021, and Rick Deckard had a license to kill.
+                            Somewhere among the hordes of humans out there, lurked several rogue androids. Deckard's
+                            assignment--find them and then..."retire" them.</p>
+                        <button type="button" class="btn btn-primary" onclick="myCart()" id="cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div style="background-color: 2px solid aqua;"></div>
+    <div id="data">
+        <table class="tbl" style="align-content: center;margin-left: 200px;">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Author</td>
+                    <td>Price</td>
+                    <td>...</td>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="order" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="mtbl">
+                        <thead>
+                            <tr>
+                                <td>Title</td>
+                                <td>Author</td>
+                                <td>Price</td>
+                                <td>...</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+
+    <script>
+        var objects = [];
+        var index = 0;
+
+        function User(id, title, author, price) {
+            this.id = "";
+            this.title = title;
+            this.author = author;
+            this.price = price;
+        }
+
+        function myCart() {
+            var user = new User($("#title").val(), $("#author").val(), $("price").val());
+            objects.push(user);
+            user.id = objects.indexOf(user);
+            addRow(user);
+        };
+
+
+        function addRow(user) {
+            var tr = "";
+            tr += "<tr id='trID" + user.id + "'>";
+            tr += "<td class='title'>";
+            tr += user.title;
+            tr += "</td>";
+            tr += "<td class='author'>";
+            tr += user.author;
+            tr += "</td>";
+            tr += "<td class='price>";
+            tr += user.price
+            tr += "</td>";
+            tr += "<td class='btns'>";
+            tr += "<button class='remove' data-index='" + user.id + "'>";
+            tr += "Remove</button>";
+            tr += "</td>";
+            tr += "</tr>";
+            $("#tbl > tbody").append(tr);
+        };
+
+        function clear(index) {
+            $("#tbl > tbody > tr").remove(index);
+        };
+
+    </script>
+</body>
+
+</html>
